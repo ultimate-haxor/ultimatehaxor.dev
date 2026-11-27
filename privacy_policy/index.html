@@ -6,15 +6,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Geist+Pixel&family=Gorditas:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body {
+        .container {
             font-family: 'Geist Pixel', sans-serif;
+        }
+        .containerGoodFont {
+            font-family: 'Arial', sans-serif;
         }
     </style>
 </head>
 
 <body>
-    <a href="../" style="text-align: center;" >return to main page</a>
-    <main class="container">
+    <main id="mainElement" class="container">
+        <a href="../" style="text-align: center;" >< return to main page</a><br>
+        <button style="text-align: center;" id="stylizedFont">toggle stylized font</button>
         <h1 style="text-align: center;">Privacy Policy for Ultimate Haxor</h1>
         <p style="text-align: center;"><strong>Effective Date:</strong> November 26, 2026</p>
 
@@ -78,3 +82,14 @@
         </ul>
     </main>
 </body>
+
+<script>
+    let stylizedFont = true
+    document.getElementById("stylizedFont").onclick = function(){
+        stylizedFont  = !stylizedFont
+        if (!stylizedFont)
+            document.getElementById('mainElement').className = 'containerGoodFont'
+        else
+            document.getElementById('mainElement').className = 'container'
+    }
+</script>
